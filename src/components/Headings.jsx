@@ -18,7 +18,7 @@ export default Heading;
 const Wrapper = styled.section`
   margin: 5rem 0 1.5rem 0;
   .color-box-style {
-    width: 1.3vw;
+    width: 18px;
     height: 5vh;
     background-color: #db4444;
     border-radius: 3px;

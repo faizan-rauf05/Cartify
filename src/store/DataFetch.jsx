@@ -12,8 +12,11 @@ const dataFetching = createSlice({
   initialState: {
     data: [],
     category: [],
+    companies: [],
     sale: [],
     best: [],
+    all_prods: [],
+    shop: [],
     status: STATUSES.idle,
   },
   extraReducers: (builder) => {
@@ -28,15 +31,30 @@ const dataFetching = createSlice({
         //unique categories
 
         let uniqueCategories = [
+          "All",
           ...new Set(fetchedData.map((currProd) => currProd.category)),
         ];
         state.category = uniqueCategories;
+
+        // unique companies
+
+        state.companies = [
+          "All",
+          ...new Set(fetchedData.map((currProd) => currProd.company)),
+        ];
 
         // sale products
         state.sale = fetchedData.filter((currProd) => currProd.type === "sale");
 
         // best products
         state.best = fetchedData.filter((currProd) => currProd.type === "best");
+
+        //all prods except sale and best
+        state.all_prods = fetchedData.filter(
+          (currProd) => currProd.type !== "sale" && currProd.type !== "best"
+        );
+        //shop-products
+        state.shop = fetchedData;
 
         // state.data = action.payload;
         state.status = STATUSES.idle;
@@ -48,6 +66,7 @@ const dataFetching = createSlice({
 });
 
 export default dataFetching.reducer;
+export const selectApiData = (state) => state.apiData.data;
 
 export const prodDataFetch = createAsyncThunk("fetch/products", async () => {
   const res = await axios.get(

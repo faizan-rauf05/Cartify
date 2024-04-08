@@ -49,8 +49,8 @@ export default Categories;
 
 const Wrapper = styled.section`
   .category-box {
-    width: 13vw;
-    height: 22vh;
+    width: 150px;
+    height: 130px;
     border: 1px solid #c0c0c0;
     border-radius: 5px;
     display: flex;
@@ -58,7 +58,7 @@ const Wrapper = styled.section`
     align-items: center;
     gap: 0.5rem;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-top: 40px;
     transition: 0.3s;
     cursor: pointer;
   }

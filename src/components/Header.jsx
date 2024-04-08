@@ -6,11 +6,13 @@ import { CiHeart } from "react-icons/ci";
 import { useState } from "react";
 
 function Header() {
-  const [searchValue, setSearchValue] = useState(null);
+  const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
+
   const handleSearch = (e) => {
     e.preventDefault();
     navigate(`/shop?search=${searchValue}`);
+    setSearchValue("");
   };
 
   return (
@@ -36,6 +38,9 @@ function Header() {
                     <NavLink to={"/about"}>
                       <li>About</li>
                     </NavLink>
+                    <NavLink to={"/shop"}>
+                      <li>Shop</li>
+                    </NavLink>
                   </ul>
                 </div>
               </nav>
@@ -48,6 +53,7 @@ function Header() {
                       className="search-bar-input"
                       onChange={(e) => setSearchValue(e.target.value)}
                       placeholder="What are you looking for?"
+                      value={searchValue}
                     />
                   </form>
                   <CiSearch className="search-icon" onClick={handleSearch} />

@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import DataFetchreducer from "./DataFetch.jsx";
+import DataFetchReducer from "../store/DataFetch.jsx";
+import CartReducer from "../store/CartSlice.jsx";
+import FilterReducer from "../store/FiltersSlice.jsx";
 
 const store = configureStore({
   reducer: {
-    apiData: DataFetchreducer,
+    apiData: DataFetchReducer,
+    cartData: CartReducer,
+    filtersData: FilterReducer,
   },
 });
 export default store;

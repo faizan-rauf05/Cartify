@@ -33,7 +33,7 @@ function HeroSlider({ imgs, noOfSlides }) {
 export default HeroSlider;
 
 const Wrapper = styled.section`
-  padding: 30px 0 30px 10px;
+  padding: 20px 0 30px 10px;
 
   .slide-banner img {
     width: 100%;

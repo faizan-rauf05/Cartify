@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     :root{
         --hover-color:#DB4444;
+        --light-grey:#f5f5f5;
     }
     a {
         text-decoration: none;
@@ -21,5 +22,18 @@ export const GlobalStyle = createGlobalStyle`
       }
     NavLink:hover{
         color:#fff;
+    }
+    h3{
+        font-weight:500;
+    }
+    .round-buttons{
+        width: 30px;
+    height: 30px;
+    background-color: var(--light-grey);
+    border: 1px solid #000;
+    margin-left: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
     }
 `;

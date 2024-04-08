@@ -8,6 +8,7 @@ import Shop from "./components/Shop.jsx";
 import Wishlist from "./components/Wishlist.jsx";
 import Cart from "./components/Cart.jsx";
 import SingleProduct from "./components/SingleProduct.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
@@ -22,12 +23,13 @@ function App() {
           <Route exact path="/shop" element={<Shop />}></Route>
           <Route
             exact
-            path="/singleproduct"
+            path="/singleproduct/:id"
             element={<SingleProduct />}
           ></Route>
           <Route exact path="/wishlist" element={<Wishlist />}></Route>
           <Route exact path="/cart" element={<Cart />}></Route>
         </Routes>
+        <Footer />
       </Router>
     </>
   );

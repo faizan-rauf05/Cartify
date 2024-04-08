@@ -1,29 +1,20 @@
-import { useEffect } from "react";
-import { prodDataFetch } from "../store/DataFetch.jsx";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Heading from "./Headings.jsx";
 import styled from "styled-components";
 import ProductCarousal from "./ProductCarousal.jsx";
 
 function Sales() {
-  const dispatch = useDispatch();
-  const salesPeoducts = useSelector((state) => state.apiData.sale);
-
-  useEffect(() => {
-    dispatch(prodDataFetch());
-  }, []);
+  const salesProducts = useSelector((state) => state.apiData.sale);
 
   return (
     <>
       <Wrapper>
         <Heading type="Today's" subheading="Flash Sales" />
-        <ProductCarousal className="product-carousal" data={salesPeoducts} />
+        <ProductCarousal className="product-carousal" data={salesProducts} />
       </Wrapper>
     </>
   );
 }
 export default Sales;
 
-const Wrapper = styled.section`
-  // margin: 4rem 0;
-`;
+const Wrapper = styled.section``;
