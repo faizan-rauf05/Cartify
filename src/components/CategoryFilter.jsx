@@ -7,7 +7,7 @@ function CategoryFilter({ data, filterHeading }) {
   const categoryFilterVal = useSelector(
     (state) => state.filtersData.filters.category
   );
-  // const [company, setCompany] = useState(null);
+  const [company, setCompany] = useState(null);
   const { handleFilters } = useFilters();
 
   return (

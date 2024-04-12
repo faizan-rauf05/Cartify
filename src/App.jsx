@@ -9,10 +9,12 @@ import Wishlist from "./components/Wishlist.jsx";
 import Cart from "./components/Cart.jsx";
 import SingleProduct from "./components/SingleProduct.jsx";
 import Footer from "./components/Footer.jsx";
+import { MediaQuery } from "./MediaQuery.jsx";
 
 function App() {
   return (
     <>
+      <MediaQuery />
       <GlobalStyle />
       <Router>
         <Header />

@@ -11,11 +11,12 @@ function HeroSlider({ imgs, noOfSlides }) {
     speed: 700,
     autoplaySpeed: 3400,
     cssEase: "linear",
+    arrows: false,
   };
 
   return (
     <>
-      <Wrapper>
+      <Wrapper className="hero-slider-section">
         <Slider {...settings}>
           {imgs.map((currImg, i) => {
             return (
@@ -33,13 +34,18 @@ function HeroSlider({ imgs, noOfSlides }) {
 export default HeroSlider;
 
 const Wrapper = styled.section`
-  padding: 20px 0 30px 10px;
-
   .slide-banner img {
     width: 100%;
-    height: 56vh;
   }
   .slick-slider .slick-list {
     border-radius: 10px;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .slide-banner img {
+      width: 100%;
+      height: 170px;
+      border-radius: 10px;
+    }
   }
 `;

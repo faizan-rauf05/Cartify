@@ -59,4 +59,21 @@ const Wrapper = styled.section`
     border-radius: 5px;
     color: #fff;
   }
+
+  @media only screen and (max-width: 450px) {
+    .banner {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+    .banner-desc {
+      width: 100%;
+    }
+    .banner-img {
+      width: 100%;
+      text-align: center;
+    }
+    .banner-desc h2 {
+      font-size: 2rem;
+    }
+  }
 `;

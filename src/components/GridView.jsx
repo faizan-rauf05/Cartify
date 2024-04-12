@@ -22,6 +22,7 @@ function GridView({ shopProducts }) {
               key={currProd.id}
               {...currProd}
               img={currProd.images[0]}
+              prod={currProd}
             />
           );
         })}

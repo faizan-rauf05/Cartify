@@ -58,4 +58,10 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
   }
+
+  @media only screen and (max-width: 450px) {
+    .explore-products {
+      justify-content: center;
+    }
+  }
 `;

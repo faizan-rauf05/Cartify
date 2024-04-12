@@ -26,15 +26,14 @@ const dataFetching = createSlice({
       })
       .addCase(prodDataFetch.fulfilled, (state, action) => {
         const fetchedData = action.payload;
-        state.data = fetchedData;
+        state.data = [...state.data, fetchedData];
 
         //unique categories
 
-        let uniqueCategories = [
+        state.category = [
           "All",
           ...new Set(fetchedData.map((currProd) => currProd.category)),
         ];
-        state.category = uniqueCategories;
 
         // unique companies
 

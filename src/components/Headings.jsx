@@ -16,6 +16,7 @@ function Heading(props) {
 export default Heading;
 
 const Wrapper = styled.section`
+  width: 100%;
   margin: 5rem 0 1.5rem 0;
   .color-box-style {
     width: 18px;
@@ -35,5 +36,16 @@ const Wrapper = styled.section`
   .sub-heading {
     font-size: 2rem;
     margin-top: 13px;
+  }
+
+  @media only screen and (max-width: 450px) {
+    padding-left: 1rem;
+    margin: 3.3rem 0 1.5rem 0;
+    .sub-heading {
+      font-size: 1.2rem;
+    }
+    .type p {
+      font-size: 0.7rem;
+    }
   }
 `;

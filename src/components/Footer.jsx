@@ -138,4 +138,8 @@ const Wrapper = styled.section`
     background-color: #000;
     margin-top: 2rem;
   }
+
+  @media only screen and (max-width: 450px) {
+    padding: 2rem;
+  }
 `;

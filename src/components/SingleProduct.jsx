@@ -26,6 +26,7 @@ function SingleProduct() {
   const { id } = useParams();
   const allProds = useSelector((state) => state.apiData.data);
   const singleProd = allProds.find((currProd) => currProd.id === id);
+  console.log(singleProd);
 
   //scroll window up only if there is data in singleProd
   useEffect(() => {

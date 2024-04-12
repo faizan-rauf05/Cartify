@@ -1,4 +1,4 @@
-import { lazy, useEffect } from "react";
+import { lazy, useEffect, useState } from "react";
 import { Suspense } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -54,10 +54,7 @@ function Shop() {
                   <h3>Product not found</h3>
                 ) : (
                   <Suspense fallback="">
-                    <ShopProductsView
-                      gridView={true}
-                      shopProducts={shopProducts}
-                    />
+                    <ShopProductsView shopProducts={shopProducts} />
                   </Suspense>
                 )}
               </div>

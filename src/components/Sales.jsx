@@ -8,7 +8,7 @@ function Sales() {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper className="sales-sectionn">
         <Heading type="Today's" subheading="Flash Sales" />
         <ProductCarousal className="product-carousal" data={salesProducts} />
       </Wrapper>
@@ -17,4 +17,8 @@ function Sales() {
 }
 export default Sales;
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  @media only screen and (max-width: 450px) {
+    width: 100%;
+  }
+`;

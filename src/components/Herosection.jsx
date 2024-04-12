@@ -8,10 +8,12 @@ function Herosection() {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper className="main-hero-section">
         <div className={"container"}>
           <div className={"hero-section"}>
-            <HeroCategories data={categoriesData} />
+            <div className="categories-section">
+              <HeroCategories data={categoriesData} />
+            </div>
             <div className={"main-slider"}>
               <Slider
                 noOfSlides={1}
@@ -33,12 +35,32 @@ function Herosection() {
 export default Herosection;
 
 const Wrapper = styled.section`
+  width: 100%;
   .main-slider {
     width: 70vw;
     height: 56vh;
+    margin-top: 30px;
   }
   .hero-section {
     display: flex;
     margin-top: 2rem;
+    gap: 1rem;
+  }
+  .categories-section {
+    width: 16vw;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .categories-section {
+      display: none;
+    }
+    .main-slider {
+      width: 100%;
+      height: 200px;
+    }
+    .hero-section {
+      margin-top: 1rem;
+      padding: 0 1rem;
+    }
   }
 `;

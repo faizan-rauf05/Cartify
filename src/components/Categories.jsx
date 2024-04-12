@@ -14,7 +14,7 @@ function Categories() {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper className="categories-section">
         <Heading type="Categories" subheading="Browse By Category" />
         <NavLink to="/shop">
           <div className="categories">
@@ -78,5 +78,24 @@ const Wrapper = styled.section`
     display: flex;
     gap: 2rem;
     justify-content: center;
+  }
+
+  @media only screen and (max-width: 450px) {
+    padding-left: 4px;
+    .categories {
+      flex-wrap: wrap;
+      column-gap: 1rem;
+      row-gap: 0;
+    }
+    .category-box {
+      width: 90px;
+      height: 90px;
+    }
+    .c-icon {
+      font-size: 2rem;
+    }
+    .category {
+      font-size: 12px;
+    }
   }
 `;

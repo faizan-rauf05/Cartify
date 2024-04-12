@@ -155,4 +155,11 @@ const Wrapper = styled.section`
   .wishlist-cart-icons a {
     color: black;
   }
+
+  @media only screen and (max-width: 450px) {
+    .search-bar,
+    .nav-links {
+      display: none;
+    }
+  }
 `;

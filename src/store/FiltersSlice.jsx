@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 const initialState = {
   shop: [],
   allProds: [],
+  view: true,
   filters: {
     category: "All",
     company: "All",
@@ -72,6 +73,31 @@ const filterSlice = createSlice({
         });
       }
     },
+    sortFilterProducts(state, action) {
+      if (action.payload === "atoz") {
+        state.shop = state.shop.sort((a, b) => {
+          return a.name.localeCompare(b.name);
+        });
+      }
+      if (action.payload === "ztoa") {
+        state.shop = state.shop.sort((a, b) => {
+          return b.name.localeCompare(a.name);
+        });
+      }
+      if (action.payload === "ltoh") {
+        state.shop = state.shop.sort((a, b) => {
+          return a.price - b.price;
+        });
+      }
+      if (action.payload === "htol") {
+        state.shop = state.shop.sort((a, b) => {
+          return b.price - a.price;
+        });
+      }
+    },
+    changeView(state, action) {
+      state.view = action.payload;
+    },
   },
 });
 
@@ -83,6 +109,8 @@ export const {
   retrieveFiltersValue,
   applyFilter,
   clearFilters,
+  sortFilterProducts,
+  changeView,
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

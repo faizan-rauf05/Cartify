@@ -90,7 +90,7 @@ const Wrapper = styled.section`
     gap: 1rem;
   }
   .speakers {
-    width: 21vw;
+    width: 23vw;
     background-color: #000;
     background: url(./speakers.png);
     background-repeat: no-repeat;
@@ -105,7 +105,7 @@ const Wrapper = styled.section`
     justify-content: flex-end;
   }
   .perfumes {
-    width: 21vw;
+    width: 22vw;
     background-color: #000;
     background: url(./perfume.png);
     background-repeat: no-repeat;
@@ -118,5 +118,46 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .grid-section {
+      flex-direction: column;
+      padding: 0 1rem;
+    }
+    .left-grid {
+      width: 100%;
+      padding: 3rem 2rem 1.5rem 1rem;
+    }
+    .left-grid h3,
+    .womens-collection h3,
+    .speakers h3,
+    .perfumes h3 {
+      font-size: 0.7rem;
+    }
+    .left-grid p,
+    .womens-collection p {
+      font-size: 0.8rem;
+    }
+    .speakers p,
+    .perfumes p {
+      font-size: 0.6rem;
+    }
+    .womens-collection {
+      width: 100%;
+      padding: 3rem 2rem 1.5rem 1rem;
+    }
+    .right-lower {
+      width: 100%;
+    }
+    .right-grid {
+      width: 100%;
+    }
+    .speakers,
+    .perfumes {
+      width: 47%;
+      height: 150px;
+      padding: 3rem 2rem 1.5rem 1rem;
+    }
   }
 `;

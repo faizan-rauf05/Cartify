@@ -35,7 +35,6 @@ function HeroCategories({ data, filterHeading }) {
 export default HeroCategories;
 const Wrapper = styled.section`
   .categories {
-    width: 16vw;
     padding: 1rem;
     padding-left: 1rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

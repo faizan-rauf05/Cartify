@@ -3,11 +3,15 @@ import styled from "styled-components";
 import StarRating from "./StarRating";
 import { Link } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
+import { useDispatch } from "react-redux";
+import { addWishlist } from "../store/WishListSlice";
 
 function ProductCard({ prod, img, name, price, off, rating, id }) {
+  const dispatch = useDispatch();
+
   return (
     <>
-      <Wrapper>
+      <Wrapper className="product-card">
         <div className="card">
           <span className="off">{off}</span>
           <div className="card-img">
@@ -30,7 +34,10 @@ function ProductCard({ prod, img, name, price, off, rating, id }) {
           </div>
           <div className="wishlist-on-card">
             <Link to="/wishlist">
-              <CiHeart className="wishlist-card-icon" />
+              <CiHeart
+                className="wishlist-card-icon"
+                onClick={() => dispatch(addWishlist(prod))}
+              />
             </Link>
           </div>
         </div>

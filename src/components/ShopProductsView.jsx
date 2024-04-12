@@ -1,12 +1,14 @@
 import React from "react";
 import GridView from "./GridView";
 import ListView from "./ListView";
+import { useSelector } from "react-redux";
 
-function ShopProductsView({ gridView, shopProducts }) {
-  if (gridView === true) {
+function ShopProductsView({ shopProducts }) {
+  const view = useSelector((state) => state.filtersData.view);
+  if (view === true) {
     return <GridView shopProducts={shopProducts} />;
   } else {
-    return <ListView />;
+    return <ListView shopProducts={shopProducts} />;
   }
 }
 

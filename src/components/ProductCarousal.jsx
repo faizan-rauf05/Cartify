@@ -19,6 +19,7 @@ const ProductCarousal = ({ data }) => {
     slidesToShow: 4,
     slidesToScroll: 2,
     autoplay: true,
+
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -33,9 +34,8 @@ const ProductCarousal = ({ data }) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
       {
@@ -43,6 +43,7 @@ const ProductCarousal = ({ data }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: true,
         },
       },
     ],
@@ -50,7 +51,7 @@ const ProductCarousal = ({ data }) => {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper className="slider-section">
         <div className="slider-container">
           <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
             {data.map((currProd, i) => {
@@ -73,5 +74,23 @@ const ProductCarousal = ({ data }) => {
 export default ProductCarousal;
 
 const Wrapper = styled.section`
+  width: 100%;
   margin: 1rem 0;
+
+  @media only screen and (max-width: 450px) {
+    padding-left: 2.3rem;
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+    .slick-next {
+      right: 18px;
+    }
+  }
+  @media only screen and (max-width: 325px) {
+    padding-left: 1.7rem;
+    .slick-next {
+      right: 0;
+    }
+  }
 `;
